@@ -22,6 +22,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import androidx.lifecycle.observe
 import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.chansax.places.BuildConfig
 import com.chansax.places.data.search.model.Business
 import com.chansax.places.databinding.ItemListingBinding
@@ -158,7 +159,10 @@ class MapsFragment : Fragment() {
                 business.photos?.get(0)?.photo_reference?.let { reference ->
                     val imageUrl =
                         "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${reference}&key=${BuildConfig.GOOGLE_PLACES_API_KEY}"
-                    Glide.with(imageview).load(imageUrl).into(imageview)
+                    Glide.with(imageview).load(imageUrl)
+                        .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+                        .fallback(R.drawable.ic_logo)
+                        .into(imageview)
                 }
 
                 placeName.text = business.name

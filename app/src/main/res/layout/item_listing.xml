@@ -29,8 +29,8 @@
             android:background="@android:color/transparent"
             android:contentDescription="@string/blank"
             android:scaleType="centerCrop"
-            app:backgroundTint="@color/material_on_surface_emphasis_medium"
-            app:backgroundTintMode="add"
+            app:backgroundTint="@color/material_on_surface_stroke"
+            app:backgroundTintMode="screen"
             app:srcCompat="@drawable/ic_logo" />
 
         <LinearLayout
