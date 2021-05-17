@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Places</string>
+    <string name="search_restaurant">Search for a restaurant</string>
+    <string name="filter">Filter</string>
+    <string name="alltrails_title">AllTrails</string>
+    <string name="fab_content_desc">Switch between Map and List</string>
+    <string name="no_results">No Results</string>
+    <string name="blank" />
+    <string name="permission_location_rationale_message">Permisson Rationale placeholder</string>
+</resources>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/mtrl_card_spacing"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="2dp"
+    app:contentPadding="16dp"
+    android:minHeight="100dp"
+    app:rippleColor="@color/color_f2f2f2">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageview"
+            android:layout_width="90dp"
+            android:scaleType="centerCrop"
+            android:layout_height="match_parent"
+            android:minHeight="67dp"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/blank"
+            app:backgroundTint="@color/material_on_surface_emphasis_medium"
+            app:backgroundTintMode="add"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_logo" />
+
+        <TextView
+            android:id="@+id/place_name"
+            style="?attr/textAppearanceSearchResultTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/color_808080"
+            app:layout_constraintStart_toEndOf="@id/imageBarrier"
+            app:layout_constraintEnd_toStartOf="@id/favorite"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Famous Restaurant" />
+
+        <RatingBar
+            android:id="@+id/ratings"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/blank"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:stepSize="0.5"
+            android:theme="@style/RatingBar"
+            app:layout_constraintStart_toEndOf="@id/imageBarrier"
+            app:layout_constraintTop_toBottomOf="@id/place_name"
+            tools:rating="5.0" />
+
+        <TextView
+            android:id="@+id/num_ratings"
+            style="?attr/textAppearanceCaption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/color_a6a6a6"
+            app:layout_constraintStart_toEndOf="@id/ratings"
+            app:layout_constraintTop_toBottomOf="@id/place_name"
+            tools:text="(135)" />
+
+        <TextView
+            style="?attr/textAppearanceListItemSmall"
+            android:id="@+id/support_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:textSize="12sp"
+            android:maxLines="3"
+            android:textColor="@color/color_a6a6a6"
+            app:layout_constraintStart_toEndOf="@id/imageBarrier"
+            app:layout_constraintTop_toBottomOf="@id/ratings"
+            tools:text="Supporting Text" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/favorite"
+            style="?attr/materialCalendarHeaderToggleButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"
+            android:background="@null"
+            android:src="@drawable/ic_favoriate_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/imageBarrier"
+            android:layout_width="4dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_height="wrap_content"
+            app:barrierDirection="end"
+            app:constraint_referenced_ids="imageview" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

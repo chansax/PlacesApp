@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_f2f2f2"
+        tools:context=".features.MainActivity">
+
+        <LinearLayout
+            android:id="@+id/layout_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingBottom="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_logo" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_filter"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:textColor="@color/color_428a13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/filter" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/text_input"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    app:hintTextColor="@color/color_428a13"
+                    app:boxStrokeColor="@color/color_428a13"
+                    android:hint="@string/search_restaurant"
+                    app:endIconContentDescription="@string/blank"
+                    app:endIconDrawable="@drawable/ic_search_icon"
+                    app:endIconMode="custom"
+                    app:errorEnabled="false"
+                    app:helperText="@string/blank"
+                    app:helperTextEnabled="false"
+                    app:placeholderText="@string/blank">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:imeOptions="actionSearch"
+                        android:inputType="text" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <fragment
+            android:id="@+id/nav_host"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_header"
+            app:navGraph="@navigation/navigation" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
